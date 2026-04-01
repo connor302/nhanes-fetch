@@ -1,0 +1,22 @@
+[project]
+name = "nhanes-fetch"
+version = "0.1.0"
+description = "Download and merge NHANES survey cycles into a single DataFrame with one command"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "requests>=2.31",
+]
+
+[project.scripts]
+nhanes-fetch = "nhanes_fetch.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["nhanes_fetch"]
